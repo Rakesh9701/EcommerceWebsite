@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="./css/kraya.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <title>KRAYA</title>
+
+    <link
+      rel="stylesheet"
+      href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css"
+    />
+  </head>
+  <body>
+    <section class="header-section">
+      <header class="main-header">
+        <div class="top-header">
+          <div class="container">
+            <nav class="top-header-content">
+              <ul>
+                <li>
+                  <a href="#">
+                    <span class="span-to-header">
+                      WISHLIST
+                      <i class="fa-regular fa-heart" id="loaclStoragewishlist">
+                        <span id="wishlistCount"></span>
+                      </i>
+                      <span class="span-spacing">|</span>
+                      <span class="span-spacing"></span>
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <span class="span-to-header">
+                      CART
+                      <i class="fa-solid fa-bag-shopping">
+                        <span id="cartCount"></span>
+                      </i>
+                      <span class="span-spacing">|</span>
+                      <span class="span-spacing"></span>
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <span class="span-to-header">
+                      <i class="fa-regular fa-user"></i> RAKESH
+                    </span>
+                    <i class="fa-solid fa-angle-down"></i>
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+
+        <div class="Need-help">
+          <div class="mobile-icon">
+            <i class="fa-solid fa-phone"></i>
+            <h3>NEED HELP?</h3>
+          </div>
+          <div class="mobile-signin">
+            <i class="fa-regular fa-user"></i>
+            <h3>Signin</h3>
+            <i class="fa-regular fa-heart">
+              <span id="wishlistCount-mobile"></span>
+            </i>
+            <i class="fa-solid fa-cart-shopping">
+              <span id="cartCount-mobile"></span>
+            </i>
+          </div>
+        </div>
+
+        <div class="container">
+          <div class="second-header-content">
+            <div class="header-logo">
+              <img src="./Assets/Kraya_logo.svg" alt="Kraya logo" />
+            </div>
+            <div class="navigation-links">
+              <nav class="nav-links">
+                <ul>
+                  <li><a href="#phone">Phone</a></li>
+                  <li><a href="#television">Television</a></li>
+                  <li><a href="#refigerator">Refrigerator</a></li>
+                  <li><a href="#laptop">laptop</a></li>
+                  <li><a href="#washingmachine">washing machine</a></li>
+                  <li><a href="#downloads">downloads</a></li>
+                </ul>
+              </nav>
+            </div>
+            <div class="search-icon">
+              <form>
+                <input
+                  id="searchBar"
+                  type="text"
+                  placeholder="seacrh products"
+                />
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </form>
+            </div>
+          </div>
+        </div>
+      </header>
+    </section>
+
+    <section class="Mobile-view-filters">
+      <div class="container">
+        <div class="responsive-filters">
+          <div class="mobile-view-sort">
+            <button>SORT BY</button>
+          </div>
+          <div class="mobile-view-responsive-filter">
+            <button>FILTERS</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="main-section">
+      <div class="container">
+        <div class="filter-selection-top">
+          <h1>HOME / MOBILES</h1>
+          <h2 id="showing-mobiles">Showing 12 results of mobiles</h2>
+          <nav class="nav-links filter-links-top">
+            <a id="sortby">Sort By</a>
+            <a id="sortbyRatings">Ratings</a>
+            <a id="ascending">Price low-High</a>
+            <a id="newerVersion">Newest First</a>
+          </nav>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="product-design">
+          <div class="filter-section-left">
+            <div class="filter-selection">
+              <h3>FILTERS</h3>
+              <form id="clear-all">
+                <button type="reset" value="reset">CLEAR ALL</button>
+              </form>
+            </div>
+
+            <p id="fliters-added"></p>
+
+            <div class="filters-applicable">
+              <div class="pricing">
+                <button class="accordionSymbol">
+                  <h4>Price</h4>
+                  <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="hiddenContent">
+                  <div id="range-slider"></div>
+                  <div class="amt-range">
+                    <div class="amt" id="minAmt">$100</div>
+                    <div class="amt" id="maxAmt">$250</div>
+                  </div>
+                </div>
+              </div>
+              <div class="pricing">
+                <button class="accordionSymbol">
+                  <h4>Brand</h4>
+                  <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="hiddenContent">
+                  <div class="Brand-selection">
+                    <form>
+                      <ul>
+                        <li>
+                          <input
+                            type="checkbox"
+                            class="Brandname"
+                            id="Apple"
+                            name="apple"
+                          />
+                          Apple
+                        </li>
+
+                        <li>
+                          <input
+                            type="checkbox"
+                            class="Brandname"
+                            id="Oneplus"
+                            name="oneplus"
+                          />
+                          Oneplus
+                        </li>
+                        <li>
+                          <input
+                            type="checkbox"
+                            class="Brandname"
+                            id="Realme"
+                            name="realme"
+                          />
+                          Realme
+                        </li>
+                      </ul>
+                    </form>
+                  </div>
+                </div>
+              </div>
+              <div class="pricing">
+                <button class="accordionSymbol">
+                  <h4>Battery Capacity</h4>
+                  <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="hiddenContent">
+                  <h4>Battery Capacity</h4>
+                </div>
+              </div>
+              <div class="pricing">
+                <button class="accordionSymbol">
+                  <h4>Screen Size</h4>
+                  <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="hiddenContent">
+                  <h4>Battery Capacity</h4>
+                </div>
+              </div>
+              <div class="pricing">
+                <button class="accordionSymbol">
+                  <h4>RAM</h4>
+                  <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="hiddenContent">
+                  <div class="Brand-selection">
+                    <form>
+                      <ul>
+                        <li>
+                          <input
+                            type="checkbox"
+                            id="4GB"
+                            name="4GB"
+                            class="Brandname"
+                          />
+                          4GB
+                        </li>
+                        <li>
+                          <input
+                            type="checkbox"
+                            id="6GB"
+                            name="6GB"
+                            class="Brandname"
+                          />6GB
+                        </li>
+                        <li>
+                          <input
+                            type="checkbox"
+                            id="8GB"
+                            name="8GB"
+                            class="Brandname"
+                          />
+                          8GB
+                        </li>
+                      </ul>
+                    </form>
+                  </div>
+                </div>
+              </div>
+              <div class="pricing">
+                <button class="accordionSymbol">
+                  <h4>Customer Ratings</h4>
+                  <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="hiddenContent">
+                  <div class="Brand-selection">
+                    <form>
+                      <ul>
+                        <li>
+                          <input type="checkbox" id="4" name="4" /> 4<i
+                            class="fa-regular fa-star"
+                          ></i>
+                        </li>
+                        <li>
+                          <input type="checkbox" id="3" name="3" />3<i
+                            class="fa-regular fa-star"
+                          ></i>
+                        </li>
+                        <li>
+                          <input type="checkbox" id="2" name="2" />
+                          2<i class="fa-regular fa-star"></i>
+                        </li>
+                      </ul>
+                    </form>
+                  </div>
+                </div>
+              </div>
+              <div class="pricing">
+                <button class="accordionSymbol">
+                  <h4>Camera</h4>
+                  <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="hiddenContent">
+                  <h4>Camer Filters</h4>
+                </div>
+              </div>
+              <div class="pricing">
+                <button class="accordionSymbol">
+                  <h4>Resolution Type</h4>
+                  <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="hiddenContent">
+                  <h4>Resolution fliters</h4>
+                </div>
+              </div>
+              <div class="pricing">
+                <button class="accordionSymbol">
+                  <h4>Operating System</h4>
+                  <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="hiddenContent">
+                  <div class="Brand-selection">
+                    <form>
+                      <ul>
+                        <li>
+                          <input
+                            type="checkbox"
+                            id="andriod"
+                            name="andriod"
+                            class="Brandname"
+                          />Andriod
+                        </li>
+                        <li>
+                          <input
+                            type="checkbox"
+                            id="ios"
+                            name="ios"
+                            class="Brandname"
+                          />IOS
+                        </li>
+                      </ul>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="mobile-structure"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="footer-section">
+      <footer class="footer-class">
+        <div class="container">
+          <a href="#top" class="footer-arrow"
+            ><i class="fa-solid fa-chevron-up"></i
+          ></a>
+
+          <div class="footer-content-1">
+            <div class="footer-content-text">
+              <h4>LET'S STAY IN TOUCH</h4>
+              <p>Get updates on sales specials and more</p>
+            </div>
+            <div class="input-form">
+              <form>
+                <input
+                  type="email"
+                  placeholder="Email address"
+                  class="input-from-email"
+                />
+                <h4 class="subscribe">SUBSCRIBE</h4>
+              </form>
+            </div>
+            <div class="social-media-follow">
+              <h4>FOLLOW KRAYA.</h4>
+              <p>We want to hear from you</p>
+            </div>
+            <div class="social-media-icons">
+              <img src="./Assets/square-facebook.svg" alt="facebook-icon" />
+              <img src="./Assets/twitter.svg" alt="twitter-icon" />
+              <img src="./Assets/youtube.svg" alt="youtube-icon" />
+              <img src="./Assets/instagram.svg" alt="instagram-icon" />
+            </div>
+          </div>
+          <div class="footer-content-2">
+            <div class="footer-about">
+              <h3>ABOUT</h3>
+              <ul class="footer-about-list">
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Careers</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">News</a></li>
+              </ul>
+            </div>
+
+            <div class="footer-about">
+              <h3>SUPPORT</h3>
+              <ul class="footer-about-list">
+                <li><a href="#">Payment</a></li>
+                <li><a href="#">Shipping</a></li>
+                <li><a href="#">Cancellation & Returns</a></li>
+                <li><a href="#">FAQs</a></li>
+              </ul>
+            </div>
+
+            <div class="footer-about">
+              <h3>POLICY</h3>
+              <ul class="footer-about-list">
+                <li><a href="#">Terms of Use</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Intellectual Property</a></li>
+                <li><a href="#">Sitemap</a></li>
+                <li><a href="#">Security</a></li>
+              </ul>
+            </div>
+
+            <div class="footer-about">
+              <h3>MAIL US</h3>
+              <p>17187 N. Laurel Park Dr., Ste. 110 Livonia, MI 48152 USA</p>
+            </div>
+
+            <div class="footer-about-services">
+              <h2>1800 123 4567</h2>
+              <p class="services">Service hours: 09:00-21:00</p>
+              <button>CHAT SUPPORT</button>
+              <div class="payment-methods-img">
+                <p>PAYMENT METHODS</p>
+                <i class="fa-brands fa-cc-visa"></i>
+                <i class="fa-brands fa-cc-mastercard"></i>
+                <i class="fa-brands fa-cc-discover"></i>
+                <i class="fa-brands fa-cc-amex"></i>
+                <i class="fa-brands fa-cc-paypal"></i>
+              </div>
+            </div>
+          </div>
+
+          <div class="footer-copyrights">
+            <p>Copyright © 2010 - 2018 commerce factory. All Rights Reserved</p>
+          </div>
+        </div>
+      </footer>
+    </section>
+    <script
+      src="https://kit.fontawesome.com/5b7517df3f.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+
+    <script type="module" src="/js/mobile.js"></script>
+  </body>
+</html>
